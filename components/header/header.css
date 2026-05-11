@@ -1,0 +1,204 @@
+/* Header Component Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #0E141D;
+    border-bottom: 1px solid #111;
+    transition: var(--transition);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-container img {
+    height: 60px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    transition: var(--transition);
+}
+
+.nav-links a:hover, .nav-links a.active { color: #0088CC; }
+
+.header-actions { display: flex; align-items: center; gap: 1.5rem; }
+
+.license-pill {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    border: 1px solid var(--glass-border);
+    padding: 6px 14px;
+    border-radius: 50px;
+    background: var(--glass-bg);
+}
+
+.nav-links li { position: relative; }
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 250px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 0;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    border-top: 3px solid #0088CC;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: #333 !important;
+    text-transform: none !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.2s ease;
+}
+
+.dropdown-menu li:last-child a { border-bottom: none; }
+
+.dropdown-menu a:hover {
+    background: #0088CC;
+    color: white !important;
+}
+
+/* Mobile Toggle */
+.mobile-menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.mobile-only-action {
+    display: none;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+.btn-quote-mobile {
+    display: block;
+    width: 100%;
+    background: #0088CC;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+@media (max-width: 992px) {
+    .nav-links { gap: 1.5rem; }
+    .nav-links a { font-size: 0.85rem; }
+}
+
+@media (max-width: 768px) {
+    nav { height: 70px; }
+    .logo-container img { height: 45px; }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .header-actions { display: none; }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: #0E141D;
+        flex-direction: column;
+        padding: 100px 2rem 2rem;
+        transition: 0.4s ease;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+    }
+
+    .nav-links.show {
+        right: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+        padding: 1rem 0;
+        display: block;
+        border-bottom: 1px solid #222;
+    }
+
+    .mobile-only-action {
+        display: block;
+    }
+
+    /* Mobile Dropdown */
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: #151C26;
+        display: none;
+        box-shadow: none;
+        border-top: none;
+        margin-top: 0.5rem;
+    }
+
+    .active-dropdown .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu a {
+        color: #CCC !important;
+        padding: 12px 30px;
+    }
+}

@@ -1,0 +1,567 @@
+/* Online Quote Page Styles */
+:root {
+    --primary-blue: #0088CC;
+    --dark-navy: #05192D;
+    --accent-gold: #FFB100;
+    --bg-light: #F8F9FA;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    background: white;
+}
+
+/* Quote Hero Section */
+.quote-hero-section {
+    padding: 140px 0 80px;
+    background: white;
+}
+
+.quote-hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+/* Slider Logic */
+.quote-slider-container {
+    width: 100%;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.quote-slider {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    animation: slideLoop 45s infinite; /* 15s per slide */
+}
+
+.slide {
+    width: 33.333%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes slideLoop {
+    0%, 31% { transform: translateX(0); }
+    33.33%, 64% { transform: translateX(-33.333%); }
+    66.66%, 97% { transform: translateX(-66.666%); }
+    100% { transform: translateX(0); }
+}
+
+/* Quote CTA Card */
+.quote-card {
+    padding: 3rem;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    text-align: center;
+    background: white;
+}
+
+.quote-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--accent-gold);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.quote-title span {
+    font-size: 1.8rem;
+    color: var(--accent-gold);
+}
+
+.quote-desc {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.quote-save {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #999;
+    margin-bottom: 2.5rem;
+}
+
+.btn-get-started {
+    display: block;
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--primary-blue);
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.btn-get-started:hover {
+    background: var(--dark-navy);
+    transform: translateY(-3px);
+}
+
+/* How It Works Section */
+.quote-process-section {
+    padding: 100px 0;
+    background: #FFFBD1;
+    background-image: radial-gradient(#F8E6A0 1px, transparent 1px);
+    background-size: 30px 30px;
+    text-align: center;
+}
+
+.section-header-centered {
+    margin-bottom: 5rem;
+}
+
+.section-header-centered .section-title-main {
+    font-size: 2.8rem;
+    color: var(--dark-navy);
+    font-weight: 900;
+}
+
+.section-header-centered span {
+    color: var(--primary-blue);
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+}
+
+.process-step {
+    padding: 3rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+.process-step:hover {
+    transform: translateY(-10px);
+}
+
+.step-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--primary-blue);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 2rem;
+    box-shadow: 0 5px 15px rgba(0, 136, 204, 0.3);
+}
+
+.process-step h4 {
+    font-size: 1.3rem;
+    color: var(--dark-navy);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.process-step p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Why Choose Us Features */
+.quote-features-section {
+    padding: 60px 0;
+    background: white;
+    border-bottom: 1px solid #F0F0F0;
+}
+
+.features-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+.feature-item i {
+    font-size: 2.5rem;
+    color: var(--accent-gold);
+}
+
+.feature-item h4 {
+    font-size: 1.1rem;
+    color: var(--dark-navy);
+    font-weight: 800;
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.feature-item p {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 100px 0;
+    background: #F9FBFC;
+    background-image: radial-gradient(#E0E0E0 1px, transparent 1px);
+    background-size: 30px 30px;
+    text-align: center;
+}
+
+.testimonial-main-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--accent-gold);
+    margin-bottom: 4rem;
+}
+
+.testimonial-main-title span {
+    color: var(--accent-gold);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.user-info {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.user-info h4 {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 700;
+    margin: 0;
+}
+
+.user-info span {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.google-logo {
+    width: 20px;
+}
+
+.star-rating {
+    color: #FBC02D;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.verified-badge {
+    color: var(--primary-blue);
+    margin-left: 5px;
+}
+
+.review-text {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.read-more {
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.google-score {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Bottom CTA */
+.bottom-cta-section {
+    padding-bottom: 100px;
+}
+
+.cta-overlap-container {
+    margin-top: -60px;
+    position: relative;
+    z-index: 10;
+}
+
+.cta-white-box {
+    background: white;
+    padding: 4rem;
+    border-radius: 16px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.12);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.cta-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.cta-item h3 {
+    font-size: 2.2rem;
+    color: var(--dark-navy);
+    font-weight: 800;
+    margin-bottom: 2.5rem;
+    letter-spacing: -1px;
+}
+
+.cta-detail {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: auto; /* Push to bottom if content varies */
+}
+
+.cta-icon {
+    width: 70px;
+    height: 70px;
+    background: #FFF4E5;
+    color: var(--accent-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.cta-text span {
+    display: block;
+    font-size: 0.95rem;
+    color: #777;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.cta-text p {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--dark-navy);
+    margin: 0;
+    white-space: nowrap; /* Prevent phone number wrapping */
+}
+
+.email-sub-form {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.email-sub-form input {
+    flex: 1;
+    padding: 1.1rem;
+    border: 1px solid #CCC;
+    border-radius: 6px;
+}
+
+.email-sub-form button {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 0 2rem;
+    border-radius: 6px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+/* SEO & FAQ Section */
+.quote-seo-section {
+    padding: 120px 0;
+    background: #FFFFFF;
+}
+
+.seo-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 8rem;
+    align-items: flex-start;
+}
+
+.seo-text-content {
+    text-align: left;
+}
+
+.seo-text-content h2 {
+    font-size: 2.8rem;
+    color: var(--dark-navy);
+    line-height: 1.1;
+    margin-bottom: 2.5rem;
+    font-weight: 900;
+}
+
+.seo-text-content p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.seo-features {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.seo-feat {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.seo-feat i {
+    font-size: 1.5rem;
+    color: #28A745;
+    margin-top: 0.3rem;
+}
+
+.seo-feat h4 {
+    font-size: 1.3rem;
+    color: var(--dark-navy);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.seo-feat p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* FAQ Accordion */
+.faq-accordion {
+    background: #F9FBFC;
+    padding: 4rem;
+    border-radius: 16px;
+    border: 1px solid #F0F0F0;
+    text-align: left;
+}
+
+.faq-title {
+    font-size: 1.8rem;
+    color: var(--dark-navy);
+    margin-bottom: 2.5rem;
+    font-weight: 800;
+}
+
+.faq-item {
+    border-bottom: 1px solid #E0E0E0;
+    padding: 1.5rem 0;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--dark-navy);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+    color: var(--primary-blue);
+}
+
+.faq-answer {
+    margin-top: 1.2rem;
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+    display: none;
+}
+
+.faq-item:hover .faq-answer {
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .seo-grid { gap: 4rem; }
+}
+
+@media (max-width: 1024px) {
+    .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+    .quote-hero-grid { grid-template-columns: 1fr; }
+    .seo-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
+    .features-row { flex-wrap: wrap; justify-content: center; }
+    .feature-item { min-width: 250px; }
+}
+
+@media (max-width: 768px) {
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .cta-white-box { grid-template-columns: 1fr; padding: 2.5rem; }
+    .email-sub-form { flex-direction: column; }
+    .testimonial-main-title { font-size: 2.2rem; }
+    .faq-accordion { padding: 2rem; }
+    .process-grid { grid-template-columns: 1fr; }
+    .section-header-centered .section-title-main { font-size: 2.2rem; }
+}

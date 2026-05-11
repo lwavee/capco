@@ -1,0 +1,14 @@
+/* Footer Component Styles */
+footer {
+    font-family: var(--font-main);
+}
+@media (max-width: 992px) {
+    footer .footer-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+@media (max-width: 576px) {
+    footer .footer-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
