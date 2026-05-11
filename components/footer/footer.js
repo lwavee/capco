@@ -1,26 +1,33 @@
 // Reusable Footer Component Injector
-const footerHTML = `
+
+document.addEventListener('DOMContentLoaded', () => {
+    const footerContainer = document.getElementById('footer-component');
+    if (footerContainer) {
+        const isRoot = document.body.id === 'home';
+        const prefix = isRoot ? '' : '../';
+
+        const footerHTML = `
 <footer style="background: var(--bg-primary); padding: 80px 0 40px; border-top: 1px solid var(--glass-border);">
     <div class="container">
         <div class="footer-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4rem; margin-bottom: 50px;">
             <div class="footer-brand">
-                <img src="../capco logo.png" alt="Logo" style="height: 50px; margin-bottom: 1.5rem;">
+                <img src="${prefix}capco logo.png" alt="Logo" style="height: 50px; margin-bottom: 1.5rem;">
                 <p style="color: var(--text-secondary); font-size: 0.9rem;">Specialized commercial insurance solutions for professionals across the West Coast.</p>
             </div>
             <div>
                 <h4 style="margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.9rem;">Quick Links</h4>
                 <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.8rem; padding: 0;">
-                    <li><a href="../Home/index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;">Home</a></li>
-                    <li><a href="../Services/index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;">Coverages</a></li>
-                    <li><a href="../About_us/index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;">About Us</a></li>
-                    <li><a href="../Contact/index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;">Contact</a></li>
+                    <li><a href="${prefix}index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;">Home</a></li>
+                    <li><a href="${prefix}Services/index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;">Coverages</a></li>
+                    <li><a href="${prefix}About_us/index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;">About Us</a></li>
+                    <li><a href="${prefix}Contact/index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;">Contact</a></li>
                 </ul>
             </div>
             <div>
                 <h4 style="margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.9rem;">Support</h4>
                 <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.8rem; padding: 0;">
                     <li><a href="#" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;">Client Login</a></li>
-                    <li><a href="../Quote/index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;">Get a Quote</a></li>
+                    <li><a href="${prefix}Quote/index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;">Get a Quote</a></li>
                     <li><a href="#" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;">Privacy Policy</a></li>
                 </ul>
             </div>
@@ -39,10 +46,7 @@ const footerHTML = `
     </div>
 </footer>
 `;
-
-document.addEventListener('DOMContentLoaded', () => {
-    const footerContainer = document.getElementById('footer-component');
-    if (footerContainer) {
         footerContainer.innerHTML = footerHTML;
     }
 });
+

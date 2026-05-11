@@ -16,7 +16,7 @@ body {
 .gl-hero {
     height: 60vh;
     min-height: 450px;
-    background: url('https://images.unsplash.com/photo-1600880210837-20d3d5727df0?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop') center/cover no-repeat;
     position: relative;
     display: flex;
     align-items: center;
