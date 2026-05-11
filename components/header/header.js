@@ -4,10 +4,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const headerContainer = document.getElementById('header-component');
     if (headerContainer) {
-        // Detect if we are in the root directory or a subdirectory
-        // This project uses a body ID of 'home' for the root index.html
-        const isRoot = document.body.id === 'home';
-        const prefix = isRoot ? '' : '../';
+        // Detect if we are on the root home page or in a subdirectory
+        const isHome = document.body.id === 'home' && !window.location.pathname.includes('/Home/');
+        const prefix = isHome ? '' : '../';
         
         const headerHTML = `
 <header>

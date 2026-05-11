@@ -3,8 +3,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const footerContainer = document.getElementById('footer-component');
     if (footerContainer) {
-        const isRoot = document.body.id === 'home';
-        const prefix = isRoot ? '' : '../';
+        // Detect if we are on the root home page or in a subdirectory
+        const isHome = document.body.id === 'home' && !window.location.pathname.includes('/Home/');
+        const prefix = isHome ? '' : '../';
 
         const footerHTML = `
 <footer style="background: var(--bg-primary); padding: 80px 0 40px; border-top: 1px solid var(--glass-border);">
