@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="container">
         <div class="footer-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4rem; margin-bottom: 50px;">
             <div class="footer-brand">
-                <img src="${prefix}capco logo.png" alt="Logo" style="height: 50px; margin-bottom: 1.5rem;">
+                <img src="${prefix}capco%20logo.png" alt="Logo" style="height: 50px; margin-bottom: 1.5rem;">
                 <p style="color: var(--text-secondary); font-size: 0.9rem;">Specialized commercial insurance solutions for professionals across the West Coast.</p>
             </div>
             <div>

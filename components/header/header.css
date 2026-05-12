@@ -101,7 +101,7 @@ nav {
 
 .dropdown-menu li:last-child a { border-bottom: none; }
 
-.dropdown-menu a:hover {
+.dropdown-menu a:hover, .dropdown-menu a.active {
     background: #0088CC;
     color: white !important;
 }

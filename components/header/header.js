@@ -26,18 +26,18 @@ document.addEventListener('DOMContentLoaded', () => {
             <li class="dropdown">
                 <a href="${prefix}Services/index.html" id="nav-services" class="dropdown-toggle">Coverages <i class="fas fa-plus" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a href="${prefix}General-Liability-Insurance/index.html">General Liability Insurance</a></li>
-                    <li><a href="${prefix}Services/index.html#auto">Auto Insurance</a></li>
-                    <li><a href="${prefix}Services/index.html#classic-cars">Classic Cars</a></li>
-                    <li><a href="${prefix}Services/index.html#commercial">Commercial</a></li>
-                    <li><a href="${prefix}Services/index.html#dwelling">Dwelling</a></li>
-                    <li><a href="${prefix}Services/index.html#home-owners">Home Owners</a></li>
-                    <li><a href="${prefix}Services/index.html#jewelry">Jewelry</a></li>
-                    <li><a href="${prefix}Services/index.html#motorcycle">Motorcycle</a></li>
-                    <li><a href="${prefix}Services/index.html#natural-disaster">Natural Disaster</a></li>
-                    <li><a href="${prefix}Services/index.html#renters">Renters</a></li>
-                    <li><a href="${prefix}Services/index.html#umbrella">Umbrella</a></li>
-                    <li><a href="${prefix}Services/index.html#watercraft">Watercraft</a></li>
+                    <li><a href="${prefix}General-Liability-Insurance/index.html" id="nav-gl-insurance">General Liability Insurance</a></li>
+                    <li><a href="${prefix}Auto-Insurance/index.html" id="nav-auto-insurance">Auto Insurance</a></li>
+                    <li><a href="${prefix}Classic-Cars/index.html" id="nav-classic-cars">Classic Cars</a></li>
+                    <li><a href="${prefix}Commercial-Insurance/index.html" id="nav-commercial-insurance">Commercial</a></li>
+                    <li><a href="${prefix}Dwelling-Insurance/index.html" id="nav-dwelling-insurance">Dwelling</a></li>
+                    <li><a href="${prefix}Home-Owners/index.html" id="nav-home-owners">Home Owners</a></li>
+                    <li><a href="${prefix}Jewelry/index.html" id="nav-jewelry-insurance">Jewelry</a></li>
+                    <li><a href="${prefix}Motorcycle/index.html" id="nav-motorcycle-insurance">Motorcycle</a></li>
+                    <li><a href="${prefix}Natural-Disaster/index.html" id="nav-natural-disaster">Natural Disaster</a></li>
+                    <li><a href="${prefix}Renters/index.html" id="nav-renters-insurance">Renters</a></li>
+                    <li><a href="${prefix}Umbrella/index.html" id="nav-umbrella-insurance">Umbrella</a></li>
+                    <li><a href="${prefix}Watercraft/index.html" id="nav-watercraft-insurance">Watercraft</a></li>
                 </ul>
             </li>
             <li><a href="${prefix}Forms/index.html" id="nav-forms">Forms</a></li>
