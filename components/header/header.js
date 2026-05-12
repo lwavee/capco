@@ -1,4 +1,4 @@
-// Reusable Header Component Injector
+// Premium Header Component Injector
 // Safely loads component without CORS issues on local file:// protocol
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const prefix = isHome ? '' : '../';
         
         const headerHTML = `
-<header>
+<header id="main-header">
     <nav>
         <a href="${prefix}index.html" class="logo-container">
             <img src="${prefix}capco%20logo.png" alt="Capital & Co Insurance Services">
@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <li><a href="${prefix}index.html" id="nav-home">Home</a></li>
             <li><a href="${prefix}About_us/index.html" id="nav-about">About Us</a></li>
             <li class="dropdown">
-                <a href="${prefix}Services/index.html" id="nav-services" class="dropdown-toggle">Coverages <i class="fas fa-plus" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
+                <a href="${prefix}Services/index.html" id="nav-services" class="dropdown-toggle">Coverages <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a href="${prefix}General-Liability-Insurance/index.html" id="nav-gl-insurance">General Liability Insurance</a></li>
+                    <li><a href="${prefix}General-Liability-Insurance/index.html" id="nav-gl-insurance">General Liability</a></li>
                     <li><a href="${prefix}Auto-Insurance/index.html" id="nav-auto-insurance">Auto Insurance</a></li>
                     <li><a href="${prefix}Classic-Cars/index.html" id="nav-classic-cars">Classic Cars</a></li>
                     <li><a href="${prefix}Commercial-Insurance/index.html" id="nav-commercial-insurance">Commercial</a></li>
@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li><a href="${prefix}Watercraft/index.html" id="nav-watercraft-insurance">Watercraft</a></li>
                 </ul>
             </li>
-            <li><a href="${prefix}Forms/index.html" id="nav-forms">Forms</a></li>
             <li><a href="${prefix}Contact/index.html" id="nav-contact">Contact Us</a></li>
             
             <!-- Mobile Actions (Hidden on Desktop) -->
@@ -48,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
         </ul>
 
         <div class="header-actions">
-            <a href="${prefix}Quote/index.html" class="btn-quote" style="background: #0088CC; padding: 12px 25px; border-radius: 4px; font-weight: 700; text-transform: none; font-size: 1rem;">Get a Quote</a>
-            <a href="#" class="btn-login" style="background: #0088CC; color: white; padding: 12px 25px; border-radius: 4px; font-weight: 700; text-decoration: none; font-size: 1rem;">Customer login</a>
+            <span class="license-pill">CA Lic #6002332</span>
+            <a href="${prefix}Quote/index.html" class="btn-primary">Get a Quote</a>
         </div>
     </nav>
 </header>
@@ -61,6 +60,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const pageId = document.body.id;
         if (pageId && document.getElementById('nav-' + pageId)) {
             document.getElementById('nav-' + pageId).classList.add('active');
+        }
+
+        // Scroll Effect for Header
+        const mainHeader = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                mainHeader.classList.add('scrolled');
+            } else {
+                mainHeader.classList.remove('scrolled');
+            }
+        });
+
+        // Trigger scroll once on load in case page is already scrolled
+        if (window.scrollY > 50) {
+            mainHeader.classList.add('scrolled');
         }
 
         // Mobile Menu Logic
@@ -83,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Dropdown Logic for Mobile
         const dropdownToggle = document.querySelector('.dropdown-toggle');
-        if (dropdownToggle && window.innerWidth <= 768) {
+        if (dropdownToggle && window.innerWidth <= 900) {
             dropdownToggle.addEventListener('click', (e) => {
                 e.preventDefault();
                 const parent = dropdownToggle.parentElement;
